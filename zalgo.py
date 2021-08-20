@@ -60,37 +60,40 @@ def charLimitInput(minLimit):
     return charLimit
 
 
-
-string = input('Initial string: ')
-
-#the user can't select a limit less than twice
-#the size of the string. This is to ensure that
-#each character has at least one addition.
-charLimit = charLimitInput(len(string) * 2)
+def run():
+    string = input('Initial string: ')
     
-addsPerChar = 0
-
-#ask for the adds per char. else if they chose a limit
-#then use the maximum possible per char without going
-#over the limit
-if charLimit == 0:
-    addsPerChar = intInput('Number of additions per char: ')
-else:
-    addsPerChar = (charLimit - len(string)) // len(string)
-
-amountWanted = intInput('Amount to generate: ')
-
-#run the function the requested number of times
-#and format the output
-for i in range(0, amountWanted):
-    print(zalgo(string, addsPerChar), end='')
-
-    #TODO: Change number of columns based on string size
-
-    #print in 3 tabbed columns
-    if ((i+1) % 4 == 0):
-        print()
+    #the user can't select a limit less than twice
+    #the size of the string. This is to ensure that
+    #each character has at least one addition.
+    charLimit = charLimitInput(len(string) * 2)
+        
+    addsPerChar = 0
+    
+    #ask for the adds per char. else if they chose a limit
+    #then use the maximum possible per char without going
+    #over the limit
+    if charLimit == 0:
+        addsPerChar = intInput('Number of additions per char: ')
     else:
-        print('\t', end='')
+        addsPerChar = (charLimit - len(string)) // len(string)
+    
+    amountWanted = intInput('Amount to generate: ')
+    
+    #run the function the requested number of times
+    #and format the output
+    for i in range(0, amountWanted):
+        print(zalgo(string, addsPerChar), end='')
+    
+        #TODO: Change number of columns based on string size
+    
+        #print in 3 tabbed columns
+        if ((i+1) % 4 == 0):
+            print()
+        else:
+            print('\t', end='')
+    
+    print()
 
-print()
+if __name__ == "__main__":
+    run()

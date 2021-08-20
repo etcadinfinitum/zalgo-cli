@@ -1,18 +1,54 @@
-# zalgo-cli
-A command line zalgo text generator.
+# Zalgo Text Generator
 
-I created this because I wanted to use a zalgo-text nickname on Discord. 
-But the online generators that I found tended to generate text of a rediculous
-length if you wanted it to look good. There was also the problem of having to 
-generate it multiple times to find one that looked good.
+## Installation
 
-This program solves both of these issues. You can choose a maximum character limit, and the
-program will evenly distribute the combining characters across the string. You can also
-choose how many different strings to generate, so you can look through them and find
-the one that you like the most.
+Clone this repository to your computer. Put it anywhere you like.
 
-## Sample usage
+To add the CLI program to your path, create a symlink inside a folder somewhere
+on your $PATH. The following command should do the trick:
+
+```shell
+# (from inside the cloned repository)
+$ sudo ln -s $(realpath ./main.py) /usr/games/zalgo
 ```
+
+Note: `/usr/games` isn't added to $PATH by default on most Linux installations.
+I agree that this is an unfortunate oversight. You may have encountered this
+if you have `fortune` or `cowsay` installed, which happen to complement the
+energy of this tool, so install those programs and add `/usr/games` to your
+path.
+
+## Usage
+
+### CLI Support
+
+Pipe to and from your favorite eldritch processes!
+
+```shell
+$ echo hello there comrades | ./main.py | lolcat
+h͖ͯeͯͅl̞͞ĺͥo͂ͨ ̫̔ţͮh͕̿è̤r̹͇e̱̖ ̴̣c̻͒o̧̬m͇͞r̞̒a̝̮d̈́̍e̬̱s̪̀
+```
+
+Run it standalone with positional text if you like.
+
+```shell
+$ ./main.py --variations 5 --additions 1 ground control to major tom
+g͎r͎óu͞n̖d̎ ́cͯo̜nͬt̨r͋o̲lͨ ͙ṭo̱ ̅m̈́a̎ĵőr͞ ̯t̾o͖m͝
+g̅r̾o̘u͆n̖d̚ ̳c͇o͟ǹt̝r̓ólͦ ̰t̷o̬ ̘m͚a̯j̈́o̫rͩ ̔t̼o̾m͎
+gͫrͨo͋u̙n̟d͓ ͙c̡o̐n̙t͆r̟o͋l̉ ͋t̸ó ̰m̈́a̶j̅o̊r̲ ̺t̼o͏m̏
+g̊r̃o̼u̮n̳d͉ ͇c̗o͝nͫt͚r̾öĺ ̩t̹o̲ ͣm͓a̝j̯ọrͦ ̹t̗oͯm̟
+g̛r͟ōún̒d͠ ̵c̔ôn͢t̐rͯỏlͥ ̙t͔o͗ ͟mͮa͘j̐o͔r̂ ̚t̊oͩm͉
+```
+
+Get help when you need it!
+
+```shell
+$ ./main.py --help
+```
+
+### Interactive Prompt
+
+```shell
 $ python zalgo.py 
 Initial string: fydrenak
 Character limit [0 for no limit, min 16]: 32
@@ -34,3 +70,8 @@ fͪ͏ͥy̸ͤ̚d̴̻͋r̤͆͟e̯͈̲n̵̒ͨã̭̀ḱ̶ͅ	f͔̎̒y̓̊͢d̏ͧ͢r�
 f͎̞̓y͙̥͠d̼̹́r̷͢͢é͗̎n͈͗ͤa̮̽͟k̗͟͢	f̧̤͎y͎̏̉d̷̳̄r̩͑͋ḛ̼͗n͏͉ͤȃͬ̚k̈́̈́͝	f̞͖ͤy̖̓̉d̥ͣ̓r̥͉̖e̶̡̕nͦ̈̐à̚͠k̬͈̂	f̰̤͗ŷ͚͑d͈̜̑r͔ͣ́e̜ͩ̾n̐́͘à̡ͯk̻ͭͅ
 f̙̣͍y̥̔ͅd̎̽ͥṟ̲̠eͥ̇͠n͍̆́ā̑ͥk̘͈̊	f̭̅̒ý̡̑d̔́͞r̬̋ͯe͍̾ͩn̻̂ͅḁͧ̏ķ̝̐	f̛̀̆y̴̜̘d͔̓̚r͍̝͐è̱͞n͎̓͠a̶̻̗ǩ̝͞	f̵̑ͤy̺͍͘d̵̡̘r̀͛̚ê̷̿n̻̓͂a͍̍̽ḵ͗̓
 ```
+
+## About
+
+Zalgo processing written by [Nyx Dean](https://github.com/aethylia). CLI
+supported added by [LeeZee](https://github.com/etcadinfinitum).
